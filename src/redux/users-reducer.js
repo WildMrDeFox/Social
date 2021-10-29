@@ -4,9 +4,9 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: [
-        {id: 1, followed: true, fullName: 'Nikita', status: 'I am a god', location: {city: 'Novosibirsk', country: 'Russian'}},
-        {id: 2, followed: false, fullName: 'Sasa', status: 'Local description', location: {city: 'Moscow', country: 'Russian'}},
-        {id: 3, followed: true, fullName: 'Andrey', status: 'Use DDD', location: {city: 'Kiev', country: 'Ukraine'}},
+        {id: 1, photoUrl: 'https://r3.mt.ru/r2/photoDBD0/20279248353-0/jpeg/bp.jpeg', followed: true, fullName: 'Nikita', status: 'I am a god', location: {city: 'Novosibirsk', country: 'Russian'}},
+        {id: 2, photoUrl: 'https://semantic-ui.com/images/avatar2/large/matthew.png', followed: false, fullName: 'Sasa', status: 'Local description', location: {city: 'Moscow', country: 'Russian'}},
+        {id: 3, photoUrl: 'https://pbs.twimg.com/profile_images/1057002966840827904/466s7Vf4.jpg', followed: true, fullName: 'Andrey', status: 'Use DDD', location: {city: 'Kiev', country: 'Ukraine'}},
     ]
 }
 
