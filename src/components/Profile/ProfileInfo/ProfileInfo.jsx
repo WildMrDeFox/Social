@@ -1,11 +1,17 @@
 import s from './ProfileInfo.module.css'
-function ProfileInfo() {
+import Preloader from "../../common/Preloader/Preloader";
+function ProfileInfo(props) {
+    if (!props.profile) {
+        return <Preloader/>
+    }
+
     return (
         <div>
             <div >
                 <img src="https://i.redd.it/bohmf1gew2y61.jpg" alt="" className={s.infoImg} />
             </div>
             <div className={s.descriptionBlock}>
+                <img src={props.profile.photos.large} alt=""/>
                 ava + description
             </div>
         </div>

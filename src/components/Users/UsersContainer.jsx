@@ -3,7 +3,7 @@ import {
     follow,
     setCurrentPage,
     setUsers,
-    setUsersTotalCount,
+    setTotalUsersCount,
     toggleIsFetching,
     unFollow
 } from "../../redux/users-reducer";
@@ -79,6 +79,6 @@ let mapStateToProps = (state) => {
     }
 }*/
 
-const UsersContainer = connect(mapStateToProps, {follow, unFollow, setUsers,setCurrentPage, setUsersTotalCount, toggleIsFetching})(UsersAPIComponent);
+const UsersContainer = connect(mapStateToProps, {follow, unFollow, setUsers,setCurrentPage, setTotalUsersCount, toggleIsFetching})(UsersAPIComponent);
 
 export default UsersContainer;

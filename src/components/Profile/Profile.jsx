@@ -4,8 +4,8 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 function Profile(props) {
     return (
         <div>
-            <ProfileInfo />
-            <MyPostsContainer store={props.store} />
+            <ProfileInfo profile={props.profile}/>
+            <MyPostsContainer />
         </div>
     )
 }
