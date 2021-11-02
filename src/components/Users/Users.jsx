@@ -2,8 +2,6 @@ import s from "./Users.module.css";
 import userPhoto from "../../assets/placeholder-man-circle.png";
 import React from "react";
 import {NavLink} from "react-router-dom";
-import axios from "axios";
-import {userAPI} from "../../api/api";
 
 function Users(props) {
 
@@ -34,23 +32,9 @@ function Users(props) {
                         </div>
                         <div>
                             {u.followed
-                                ? <button onClick={() => {
-
-                                    userAPI.unFollow(u.id).then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.unFollow(u.id);
-                                            }
-                                    })
-
+                                ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {props.unFollow(u.id)
                                 }}>Unfollow</button>
-                                : <button onClick={() => {
-
-                                    userAPI.follow(u.id).then(data => {
-                                        if(data.resultCode === 0) {
-                                            props.follow(u.id);
-                                        }
-                                    })
-
+                                : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {props.follow(u.id)
                                 }}>Follow</button>}
                         </div>
                     </span>
