@@ -24,3 +24,9 @@ export const userAPI = {
             .then(response => response.data)
     }
 }
+
+export const headerAPI = {
+    auth () {
+        return instance.get(`auth/me`).then(response => response.data)
+    }
+}
