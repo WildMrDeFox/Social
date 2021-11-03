@@ -1,5 +1,6 @@
 import s from './ProfileInfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus";
 function ProfileInfo(props) {
     if (!props.profile) {
         return <Preloader/>
@@ -7,12 +8,15 @@ function ProfileInfo(props) {
 
     return (
         <div>
-            <div >
+            {/*<div >
                 <img src="https://i.redd.it/bohmf1gew2y61.jpg" alt="" className={s.infoImg} />
-            </div>
+            </div>*/}
+
+
+
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large} alt=""/>
-                ava + description
+                <ProfileStatus status={"Hello World"}/>
             </div>
         </div>
     )
