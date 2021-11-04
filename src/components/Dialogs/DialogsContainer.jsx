@@ -1,4 +1,4 @@
-import {addMessageActionCreator} from "../../redux/dialogs-reducer";
+import {sendMessageCreator} from "../../redux/dialogs-reducer";
 import React from "react";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
@@ -7,14 +7,12 @@ import {compose} from "redux";
 
 let mapStateToProps = (state) => {
     return {
-        dialogs: state.dialogsPage.dialogs,
-        newMessageText: state.dialogsPage.newMessageText,
-        messages: state.dialogsPage.messages,
+        dialogsPage: state.dialogsPage,
     }
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        addMessage: (newMessageBody) => {dispatch(addMessageActionCreator(newMessageBody));},
+        sendMessage: (newMessageBody) => {dispatch(sendMessageCreator(newMessageBody));},
     }
 }
 

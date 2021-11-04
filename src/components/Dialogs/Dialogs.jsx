@@ -7,11 +7,11 @@ import {Field, reduxForm} from "redux-form";
 
 function Dialogs(props) {
 
-    let dialogsElements = props.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
-    let messagesElements = props.messages.map(message => <Message message={message.message}/>);
+    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id}/>);
+    let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message} key={message.id} />);
 
     let addNewMessage = (values) => {
-        props.addMessage(values)
+        props.sendMessage(values.newMessageBody)
     }
 
     if (!props.isAuth) return <Redirect to={"/login"} />
