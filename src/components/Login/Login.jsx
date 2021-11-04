@@ -5,7 +5,7 @@ function LoginForm(props) {
 
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field placeholder={"Login"} name={"login"} component={"input"}/>
+                <Field placeholder={"Login"} name={"login"} component={"input"} type={"text"}/>
             </div>
             <div>
                 <Field placeholder={"Password"} name={"password"} component={"input"}/>
@@ -24,9 +24,10 @@ const LoginReduxForm = reduxForm({
     form: 'login'
 })(LoginForm)
 
+
 function Login (props) {
     const onSubmit = (formData) => {
-
+        console.log(formData)
     }
 
     return (

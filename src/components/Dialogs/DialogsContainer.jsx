@@ -1,4 +1,4 @@
-import {addMessageActionCreator, addUpdateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
+import {addMessageActionCreator} from "../../redux/dialogs-reducer";
 import React from "react";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
@@ -14,8 +14,7 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        onMessageText: (text) => {dispatch(addUpdateNewMessageTextActionCreator(text));},
-        addMessage: () => {dispatch(addMessageActionCreator());},
+        addMessage: (newMessageBody) => {dispatch(addMessageActionCreator(newMessageBody));},
     }
 }
 
