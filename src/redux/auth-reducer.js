@@ -51,7 +51,7 @@ export const logout = () => (dispatch) => {
     headerAPI.logout()
         .then(response => {
             if (response.data.resultCode === 0) {
-                dispatch(auth(null, null, null, false))
+                dispatch(setAuthUserData(null, null, null, false))
             }
         })
 }
