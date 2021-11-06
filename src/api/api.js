@@ -27,7 +27,7 @@ export const userAPI = {
 
 export const headerAPI = {
     auth () {
-        return instance.get(`auth/me`).then(response => response.data)
+        return instance.get(`auth/me`)
     },
     login (email, password, rememberMe = 1) {
         return instance.post('auth/login', {email, password, rememberMe})
