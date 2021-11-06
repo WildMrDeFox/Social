@@ -9,6 +9,8 @@ let Paginator = (props) => {
         pages.push(i)
     }
 
+
+
     return (
         <div>
             {pages.map(p => {
