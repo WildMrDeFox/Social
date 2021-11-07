@@ -1,22 +1,25 @@
 import s from './ProfileInfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
-import ProfileStatus from "./ProfileStatus";
+import userPhoto from "./../../../assets/placeholder-man-circle.png"
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
+
 function ProfileInfo(props) {
+
     if (!props.profile) {
         return <Preloader/>
     }
 
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            props.savePhoto(e.target.files[0])
+        }
+    }
+
     return (
         <div>
-            {/*<div >
-                <img src="https://i.redd.it/bohmf1gew2y61.jpg" alt="" className={s.infoImg} />
-            </div>*/}
-
-
-
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large} alt=""/>
+                <img src={props.profile.photos.large || userPhoto} alt="" className={s.mainPhoto} />
+                {props.isOwner && <input type={'file'} onChange={onMainPhotoSelected} /> }
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
