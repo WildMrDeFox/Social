@@ -74,11 +74,14 @@ export const savePhoto = (file) => async (dispatch) => {
     }
 }
 
-export const saveProfile = (profile) => async (dispatch) => {
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    let userId = getState().auth.userId
     let response = await profileAPI.saveProfile(profile)
 
     if (response.data.resultCode === 0) {
-        dispatch()
+        dispatch(getUserProfile(userId))
+    } else {
+        dispatch(stopSubmit("login", {_error: response.data.messages}))
     }
 }
 
